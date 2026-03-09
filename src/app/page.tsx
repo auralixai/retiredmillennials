@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 import { 
   Zap, 
@@ -31,7 +32,7 @@ export default function Home() {
           </div>
           <div className="hidden md:flex items-center gap-8 text-sm font-bold tracking-widest uppercase text-gray-400">
             <a href="#vision" className="hover:text-[#FFD700] transition-colors">Vision</a>
-            <a href="#network" className="hover:text-[#FFD700] transition-colors">Network</a>
+            <Link href="/library" className="hover:text-[#FFD700] transition-colors">Library</Link>
             <a href="#join" className="px-5 py-2.5 bg-white text-black rounded-full hover:bg-[#FFD700] transition-all">Join Club</a>
           </div>
         </div>
