@@ -33,6 +33,7 @@ export default function Home() {
           <div className="hidden md:flex items-center gap-8 text-sm font-bold tracking-widest uppercase text-gray-400">
             <a href="#vision" className="hover:text-[#FFD700] transition-colors">Vision</a>
             <Link href="/library" className="hover:text-[#FFD700] transition-colors">Library</Link>
+            <Link href="/blog" className="hover:text-[#FFD700] transition-colors">Blog</Link>
             <a href="#join" className="px-5 py-2.5 bg-white text-black rounded-full hover:bg-[#FFD700] transition-all">Join Club</a>
           </div>
         </div>
@@ -108,6 +109,46 @@ export default function Home() {
                </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Featured Opportunities */}
+      <section className="max-w-7xl mx-auto px-6 py-32 border-t border-white/5">
+        <div className="flex items-end justify-between mb-16">
+          <div className="max-w-xl">
+            <h2 className="text-4xl font-black uppercase italic tracking-tighter mb-4">
+              Featured <span className="text-[#FFD700]">Opportunities</span>
+            </h2>
+            <p className="text-gray-500 text-sm font-medium">
+              High-margin, low-friction business models curated for our network. No fluff, just execution.
+            </p>
+          </div>
+          <Link href="/library" className="hidden md:flex items-center gap-2 text-xs font-black tracking-widest uppercase hover:text-[#FFD700] transition-colors">
+            View All Blueprints <ArrowRight className="w-3 h-3" />
+          </Link>
+        </div>
+
+        <div className="grid md:grid-cols-3 gap-8">
+           {[
+             { title: "Amazon to eBay Book Flip", slug: "book-arbitrage-automation", category: "Arbitrage" },
+             { title: "White-Label SaaS Agency", slug: "micro-saas-white-label", category: "Automation" },
+             { title: "Costco Pallet Extraction", slug: "pallet-auction-extraction", category: "Liquidation" }
+           ].map((item, i) => (
+             <Link key={i} href={`/library/${item.slug}`} className="group p-8 rounded-3xl bg-white/[0.02] border border-white/5 hover:border-[#FFD700]/30 transition-all">
+                <div className="flex items-center justify-between mb-4">
+                  <div className="text-[9px] font-black uppercase tracking-widest text-[#FFD700] bg-[#FFD700]/10 px-2 py-0.5 rounded border border-[#FFD700]/20">
+                    {item.category}
+                  </div>
+                  <Zap className="w-3 h-3 text-gray-700 group-hover:text-[#FFD700] transition-colors" />
+                </div>
+                <h3 className="text-xl font-black italic uppercase tracking-tighter mb-4 group-hover:text-[#FFD700] transition-colors">
+                  {item.title}
+                </h3>
+                <div className="flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-gray-600">
+                  Read Blueprint <ChevronRight className="w-3 h-3" />
+                </div>
+             </Link>
+           ))}
         </div>
       </section>
 

@@ -10,11 +10,29 @@ import {
   ArrowRight
 } from "lucide-react";
 import Link from "next/link";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Opportunity Library | Retired Millennials Resources",
+  description: "Highly actionable, low-friction business models designed for the modern millennial. Blueprints for wealth automation and location freedom.",
+  openGraph: {
+    title: "Opportunity Library | Retired Millennials Resources",
+    description: "Highly actionable, low-friction business models designed for the modern millennial. Blueprints for wealth automation and location freedom.",
+    url: "https://retiredmillennials.com/library",
+    type: "website",
+  },
+};
 
 export default function LibraryPage() {
   return (
-    <div className="min-h-screen bg-[#0A0B0D] text-white pt-24 px-4 pb-12 selection:bg-[#FFD700]/30 selection:text-white font-sans">
-      <div className="max-w-7xl mx-auto">
+    <div className="min-h-screen bg-[#0A0B0D] text-white pt-24 px-4 pb-12 selection:bg-[#FFD700]/30 selection:text-white font-sans relative overflow-x-hidden">
+      {/* Background Glows */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-full overflow-hidden pointer-events-none opacity-20">
+        <div className="absolute top-40 left-1/4 w-[500px] h-[500px] bg-[#FFD700] rounded-full blur-[150px] animate-pulse"></div>
+        <div className="absolute top-20 right-1/4 w-[400px] h-[400px] bg-blue-500 rounded-full blur-[150px] animate-pulse delay-700"></div>
+      </div>
+
+      <div className="max-w-7xl mx-auto relative z-10">
         <Link href="/" className="inline-flex items-center gap-2 text-gray-500 hover:text-[#FFD700] mb-8 transition-colors group">
           <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" /> Back to Home
         </Link>
@@ -23,7 +41,7 @@ export default function LibraryPage() {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
           <div className="max-w-2xl">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[#FFD700] text-[10px] font-black tracking-widest uppercase mb-4">
-              <BookOpen className="w-3 h-3" /> The Freedom Library
+              <BookOpen className="w-3 h-3" /> The Opportunity Library
             </div>
             <h1 className="text-5xl md:text-7xl font-black tracking-tighter mb-4 italic uppercase leading-none">
               The <span className="text-[#FFD700]">Blueprints</span>
@@ -32,6 +50,9 @@ export default function LibraryPage() {
               Highly actionable, low-friction business models designed for the modern millennial. No fluff, just the math and the steps to execute.
             </p>
           </div>
+          <a href="#dictionary" className="px-6 py-3 bg-white/5 border border-white/10 rounded-xl text-xs font-black tracking-widest uppercase hover:bg-white/10 transition-all flex items-center gap-2">
+             Jump to Dictionary <ArrowRight className="w-3 h-3" />
+          </a>
         </div>
 
         {/* Blueprints Grid */}
@@ -67,9 +88,9 @@ export default function LibraryPage() {
         </div>
 
         {/* Dictionary Section */}
-        <div className="pt-24 border-t border-white/5">
+        <div id="dictionary" className="pt-24 border-t border-white/5">
           <h2 className="text-3xl font-black tracking-tighter mb-12 italic uppercase text-center">
-            The Solopreneur <span className="text-[#FFD700]">Dictionary</span>
+            The Flipping <span className="text-[#FFD700]">Dictionary</span>
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-16">
             {dictionary.map((item, i) => (
