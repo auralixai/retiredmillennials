@@ -26,9 +26,6 @@ export const metadata = {
     description: "Curated network and resources for millennials ready to free themselves from the rat race and live life to the fullest now.",
     creator: "@dvnnytorres",
   },
-  icons: {
-    icon: "/favicon.ico",
-  },
 };
 
 export default function RootLayout({
